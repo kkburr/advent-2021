@@ -14,7 +14,7 @@ type positions struct {
 }
 
 func main() {
-	arr := utils.SetupDay2()
+	arr := utils.SetupStringArray()
 	solvePart1(arr)
 	solvePart2(arr)
 }
