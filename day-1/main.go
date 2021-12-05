@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arr := utils.Setup()
+	arr := utils.SetupIntArray()
 	solvePart1(arr)
 	solvePart2(arr)
 }
