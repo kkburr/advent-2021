@@ -23,6 +23,18 @@ func SetupIntArray() []int {
 	return arr
 }
 
+func SetupIntArray2() []int {
+	//there's gotta be a better way to do this
+	buff, _ := os.ReadFile("input")
+	arr := strings.Split(strings.TrimSpace(string(buff)), ",")
+	nextArr := make([]int, 0)
+	for _, v := range arr {
+		val, _ := strconv.Atoi(v)
+		nextArr = append(nextArr, val)
+	}
+	return nextArr
+}
+
 func SetupStringArray() []string {
 	// todo: simplify into something like:
 	// buff, _ := os.ReadFile("input")
