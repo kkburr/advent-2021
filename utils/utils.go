@@ -23,6 +23,18 @@ func SetupIntArray() []int {
 	return arr
 }
 
+func SetupFloatArray() []float64 {
+	//there's gotta be a better way to do this
+	buff, _ := os.ReadFile("input")
+	arr := strings.Split(strings.TrimSpace(string(buff)), ",")
+	nextArr := make([]float64, 0)
+	for _, v := range arr {
+		val, _ := strconv.ParseFloat(v, 64)
+		nextArr = append(nextArr, val)
+	}
+	return nextArr
+}
+
 func SetupIntArray2() []int {
 	//there's gotta be a better way to do this
 	buff, _ := os.ReadFile("input")
