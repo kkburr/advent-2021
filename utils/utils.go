@@ -60,6 +60,37 @@ func SetupStringArray() []string {
 	return arr
 }
 
+func Contains(s []int, e int) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
+}
+
+func SetupStringArray2(splt ...string) []string {
+	scanner := getScanner()
+	arr := make([]string, 0)
+	for scanner.Scan() {
+		row := scanner.Text()
+		subArr := strings.Split(row, splt[0])
+		subArr = strings.Split(strings.TrimSpace(subArr[1]), splt[1])
+		arr = append(arr, subArr...)
+	}
+	return arr
+}
+func SetupStringArray2b(splitOn string) [][]string {
+	scanner := getScanner()
+	arr := make([][]string, 0)
+	for scanner.Scan() {
+		input := scanner.Text()
+		row := strings.Split(input, splitOn)
+		arr = append(arr, row)
+	}
+	return arr
+}
+
 func SetupDayFour() ([]string, [][][]string) {
 	re := regexp.MustCompile(`\s+`)
 	scanner := getScanner()
