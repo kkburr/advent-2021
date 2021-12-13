@@ -9,6 +9,7 @@ import (
 )
 
 func getScanner() *bufio.Scanner {
+	// file, _ := os.Open("input2")
 	file, _ := os.Open("input")
 	return bufio.NewScanner(file)
 }
@@ -45,6 +46,24 @@ func SetupIntArray2() []int {
 		nextArr = append(nextArr, val)
 	}
 	return nextArr
+}
+
+func SetupIntArray3() [][]int {
+	scanner := getScanner()
+	arr := make([][]int, 0)
+	for scanner.Scan() {
+		rowStr := scanner.Text()
+		rowStrs := strings.Split(rowStr, "")
+		// how to do this better
+		rowInts := []int{}
+		for _, v := range rowStrs {
+			val, _ := strconv.Atoi(v)
+			rowInts = append(rowInts, val)
+		}
+		arr = append(arr, rowInts)
+	}
+	return arr
+
 }
 
 func SetupStringArray() []string {
