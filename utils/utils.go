@@ -9,7 +9,6 @@ import (
 )
 
 func getScanner() *bufio.Scanner {
-	// file, _ := os.Open("input2")
 	file, _ := os.Open("input")
 	return bufio.NewScanner(file)
 }
@@ -77,6 +76,15 @@ func SetupStringArray() []string {
 		arr = append(arr, row)
 	}
 	return arr
+}
+
+func ContainsString(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }
 
 func Contains(s []int, e int) bool {
